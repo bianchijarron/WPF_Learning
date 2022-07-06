@@ -27,7 +27,7 @@ namespace WPF_Learning
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //MessageBox.Show(datatimepicker1.SelectedDateTime.ToString());
-            HandyControl.Controls.Dialog.Show(new dialog());
+            HandyControl.Controls.Dialog.Show(new dialog(datatimepicker1.SelectedDateTime.ToString()));
         }
     }
 }

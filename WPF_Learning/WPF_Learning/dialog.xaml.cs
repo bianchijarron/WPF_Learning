@@ -20,9 +20,10 @@ namespace WPF_Learning
     /// </summary>
     public partial class dialog : Border
     {
-        public dialog()
+        public dialog(string str)
         {
             InitializeComponent();
+            myText.Text = str;
         }
     }
 }
