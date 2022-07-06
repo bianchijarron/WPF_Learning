@@ -10,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WPF_Learning
 {
     /// <summary>
-    /// sipmle_5.xaml 的互動邏輯
+    /// dialog.xaml 的互動邏輯
     /// </summary>
-    public partial class sipmle_5 : Window
+    public partial class dialog : Border
     {
-        public sipmle_5()
+        public dialog()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //MessageBox.Show(datatimepicker1.SelectedDateTime.ToString());
-            HandyControl.Controls.Dialog.Show(new dialog());
         }
     }
 }
