@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Learning"
         mc:Ignorable="d"
-        Title="simple_3" Height="450" Width="800">
+        Title="simple_3" Height="476" Width="558">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button FontSize="50" Grid.Column="0" Grid.Row="2">1</Button>
+        <Button FontSize="50" Grid.Column="1" Grid.Row="2">2</Button>
+        <Button FontSize="50" Grid.Column="2" Grid.Row="2">3</Button>
+        <Button FontSize="50" Grid.Column="0" Grid.Row="1">4</Button>
+        <Button FontSize="50" Grid.Column="1" Grid.Row="1">5</Button>
+        <Button FontSize="50" Grid.Column="2" Grid.Row="1">6</Button>
+        <Button FontSize="50" Grid.Column="0" Grid.Row="0">7</Button>
+        <Button FontSize="50" Grid.Column="1" Grid.Row="0">8</Button>
+        <Button FontSize="50" Grid.Column="2" Grid.Row="0">9</Button>
+        <Button FontSize="50" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">0</Button>
+        <Button FontSize="50" Grid.Column="2" Grid.Row="3">.</Button>
     </Grid>
 </Window>
