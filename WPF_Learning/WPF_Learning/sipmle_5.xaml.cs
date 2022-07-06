@@ -23,5 +23,11 @@ namespace WPF_Learning
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(datatimepicker1.SelectedDateTime.ToString());
+            //HandyControl.Controls.Dialog.Show(new UserControl1());
+        }
     }
 }
