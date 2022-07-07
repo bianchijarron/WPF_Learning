@@ -53,5 +53,25 @@ namespace WPF_Learning.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        public double result
+        {
+            get
+            {
+                double _a = Convert.ToDouble(calcModel.A == "" ? "0" : calcModel.A);
+                double _b = Convert.ToDouble(calcModel.B == "" ? "0" : calcModel.B);
+
+                if(calcModel.operatorSign == "+")
+                    return _a + _b;
+                else if (calcModel.operatorSign == "-")
+                    return _a - _b;
+                if (calcModel.operatorSign == "*")
+                    return _a * _b;
+                if (calcModel.operatorSign == "/")
+                    return _a / _b;
+                else
+                    return 0;
+            }
+        }
     }
 }

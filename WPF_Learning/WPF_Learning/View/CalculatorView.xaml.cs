@@ -28,6 +28,14 @@ namespace WPF_Learning.View
 
         private void Digital_Click(object sender, RoutedEventArgs e)
         {
+            if (vm.Display != "")
+            {
+                vm.A = "";
+                vm.Display = "";
+                vm.operatorSign = "";
+                vm.B = "";
+            }
+
             if (vm.operatorSign == "")
                 vm.A += ((Button)sender).Content.ToString();
             else
@@ -41,6 +49,7 @@ namespace WPF_Learning.View
 
         private void Equal_Click(object sender, RoutedEventArgs e)
         {
+            vm.Display = " = " + vm.result.ToString();
         }
     }
 }
