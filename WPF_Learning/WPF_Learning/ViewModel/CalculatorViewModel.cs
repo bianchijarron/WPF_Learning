@@ -23,5 +23,35 @@ namespace WPF_Learning.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        public string B
+        {
+            get { return calcModel.B; }
+            set
+            {
+                calcModel.B = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string operatorSign
+        {
+            get { return calcModel.operatorSign; }
+            set
+            {
+                calcModel.operatorSign = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Display
+        {
+            get { return calcModel.Display; }
+            set
+            {
+                calcModel.Display = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

@@ -28,7 +28,19 @@ namespace WPF_Learning.View
 
         private void Digital_Click(object sender, RoutedEventArgs e)
         {
-            vm.A += ((Button)sender).Content.ToString();
+            if (vm.operatorSign == "")
+                vm.A += ((Button)sender).Content.ToString();
+            else
+                vm.B += ((Button)sender).Content.ToString();
+        }
+
+        private void Operator_Click(object sender, RoutedEventArgs e)
+        {
+            vm.operatorSign = ((Button)sender).Content.ToString();
+        }
+
+        private void Equal_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

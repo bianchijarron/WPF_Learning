@@ -21,29 +21,29 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Button Grid.Column="0" Grid.Row="0" FontSize="48" Width="80" Height="80" Click="Digital_Click">7</Button>
-        <Button Grid.Column="1" Grid.Row="0" FontSize="48" Width="80" Height="80">8</Button>
-        <Button Grid.Column="2" Grid.Row="0" FontSize="48" Width="80" Height="80">9</Button>
+        <Button Grid.Column="1" Grid.Row="0" FontSize="48" Width="80" Height="80" Click="Digital_Click">8</Button>
+        <Button Grid.Column="2" Grid.Row="0" FontSize="48" Width="80" Height="80" Click="Digital_Click">9</Button>
         <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" FontSize="48" Width="80" Height="80">0</Button>
-        <Button Grid.Column="0" Grid.Row="2" FontSize="48" Width="80" Height="80">1</Button>
-        <Button Grid.Column="1" Grid.Row="2" FontSize="48" Width="80" Height="80">2</Button>
-        <Button Grid.Column="2" Grid.Row="2" FontSize="48" Width="80" Height="80">3</Button>
-        <Button Grid.Column="0" Grid.Row="1" FontSize="48" Width="80" Height="80">4</Button>
-        <Button Grid.Column="1" Grid.Row="1" FontSize="48" Width="80" Height="80">5</Button>
-        <Button Grid.Column="2" Grid.Row="1" FontSize="48" Width="80" Height="80">6</Button>
-        <Button Grid.Column="2" Grid.Row="3" FontSize="48" Width="80" Height="80">.</Button>
-        
-        <Button Grid.Column="3" Grid.Row="0" FontSize="48" Width="80" Height="80">+</Button>
-        <Button Grid.Column="3" Grid.Row="1" FontSize="48" Width="80" Height="80">-</Button>
-        <Button Grid.Column="3" Grid.Row="2" FontSize="48" Width="80" Height="80">*</Button>
-        <Button Grid.Column="3" Grid.Row="3" FontSize="48" Width="80" Height="80">/</Button>
+        <Button Grid.Column="0" Grid.Row="2" FontSize="48" Width="80" Height="80" Click="Digital_Click">1</Button>
+        <Button Grid.Column="1" Grid.Row="2" FontSize="48" Width="80" Height="80" Click="Digital_Click">2</Button>
+        <Button Grid.Column="2" Grid.Row="2" FontSize="48" Width="80" Height="80" Click="Digital_Click">3</Button>
+        <Button Grid.Column="0" Grid.Row="1" FontSize="48" Width="80" Height="80" Click="Digital_Click">4</Button>
+        <Button Grid.Column="1" Grid.Row="1" FontSize="48" Width="80" Height="80" Click="Digital_Click">5</Button>
+        <Button Grid.Column="2" Grid.Row="1" FontSize="48" Width="80" Height="80" Click="Digital_Click">6</Button>
+        <Button Grid.Column="2" Grid.Row="3" FontSize="48" Width="80" Height="80" Click="Digital_Click">.</Button>
+
+        <Button Grid.Column="3" Grid.Row="0" FontSize="48" Width="80" Height="80" Click="Equal_Click">+</Button>
+        <Button Grid.Column="3" Grid.Row="1" FontSize="48" Width="80" Height="80" Click="Operator_Click">-</Button>
+        <Button Grid.Column="3" Grid.Row="2" FontSize="48" Width="80" Height="80" Click="Operator_Click">*</Button>
+        <Button Grid.Column="3" Grid.Row="3" FontSize="48" Width="80" Height="80" Click="Operator_Click">/</Button>
         
         <Button Grid.Column="0" Grid.Row="4" FontSize="48" Width="80" Height="80">=</Button>
 
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Center">
             <TextBlock FontSize="48" Text="{Binding A}"></TextBlock>
-            <TextBlock FontSize="48">+</TextBlock>
-            <TextBlock FontSize="48">B</TextBlock>
-            <TextBlock FontSize="48">=C</TextBlock>
+            <TextBlock FontSize="48" Text="{Binding operatorSign}"></TextBlock>
+            <TextBlock FontSize="48" Text="{Binding B}"></TextBlock>
+            <TextBlock FontSize="48" Text="{Binding Display}"></TextBlock>
         </StackPanel>
 
     </Grid>
