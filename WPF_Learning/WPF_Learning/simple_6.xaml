@@ -1,0 +1,14 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Learning"
+        xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="WPF_Learning.simple_6"
+        mc:Ignorable="d"
+        Title="simple_6" Height="450" Width="800">
+    <Grid>
+        <Slider x:Name="silder1" HorizontalAlignment="Left" Margin="320,270,0,0" VerticalAlignment="Top" Width="255" Maximum="100" SmallChange="0"/>
+        <ProgressBar Value="{Binding ElementName=silder1, Path=Value}" HorizontalAlignment="Left" Height="41" Margin="340,164,0,0" VerticalAlignment="Top" Width="188"/>
+    </Grid>
+</Window>
