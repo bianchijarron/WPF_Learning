@@ -10,5 +10,7 @@
     <Grid>
         <Button Content="Button" Margin="0,234,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <hc:DateTimePicker x:Name="datatimepicker1" HorizontalAlignment="Center" Margin="0,122,0,0" VerticalAlignment="Top" Width="336"/>
+        <hc:WaveProgressBar x:Name="wpbar" HorizontalAlignment="Left" Margin="593,295,0,0" VerticalAlignment="Top"/>
+        <hc:ProgressButton Style="{StaticResource ProgressButtonPrimary}" x:Name="pbar" Content="ProgressButton" HorizontalAlignment="Left" Margin="186,295,0,0" VerticalAlignment="Top" Width="244" Checked="pbar_Checked"/>
     </Grid>
 </Window>
