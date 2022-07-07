@@ -39,7 +39,7 @@ namespace WPF_Learning
             if (if_mouse_down)
             {
                 Point thisPoint = e.GetPosition(this);
-                canvas.Children.Add(new Line() { X1 = last_point.X, Y1 = last_point.Y, X2 = thisPoint.X, Y2 = thisPoint.Y, Stroke = Brushes.Black });
+                canvas.Children.Add(new Line() { X1 = last_point.X, Y1 = last_point.Y, X2 = thisPoint.X, Y2 = thisPoint.Y, Stroke = thisColor });
                 last_point = thisPoint;
             }
         }
@@ -47,6 +47,12 @@ namespace WPF_Learning
         private void Canvas_MouseUp(object sender, MouseButtonEventArgs e)
         {
             if_mouse_down = false;
+        }
+
+        Brush thisColor = Brushes.Black;
+        private void colorpicker1_Confirmed(object sender, HandyControl.Data.FunctionEventArgs<Color> e)
+        {
+            thisColor = colorpicker1.SelectedBrush;
         }
     }
 }
