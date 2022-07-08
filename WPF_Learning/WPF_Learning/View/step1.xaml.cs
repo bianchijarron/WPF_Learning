@@ -19,9 +19,11 @@ namespace WPF_Learning.View
     /// </summary>
     public partial class step1 : Window
     {
+        ViewModel.MRTStationVM vm = new ViewModel.MRTStationVM();
         public step1()
         {
             InitializeComponent();
+            this.DataContext = vm;
         }
     }
 }

@@ -8,12 +8,14 @@ namespace WPF_Learning.Model
 {
     public class MRTLevel
     {
-        public MRTLevel()
+        public MRTLevel(string _name, int _index)
         {
-
+            name = _name;
+            index = _index;
         }
 
         public string name { get; set; }
         public double height { get; set; }
+        public int index { get; set; }
     }
 }

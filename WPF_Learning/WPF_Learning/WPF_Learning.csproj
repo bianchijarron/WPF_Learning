@@ -113,6 +113,8 @@
       <DependentUpon>sipmle_5.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\CalculatorViewModel.cs" />
+    <Compile Include="ViewModel\MRTLevelVM.cs" />
+    <Compile Include="ViewModel\MRTStationVM.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\CalculatorView.xaml.cs">
       <DependentUpon>CalculatorView.xaml</DependentUpon>
