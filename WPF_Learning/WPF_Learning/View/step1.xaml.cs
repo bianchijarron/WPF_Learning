@@ -52,6 +52,7 @@ namespace WPF_Learning.View
                     panel.Orientation = Orientation.Horizontal;
                     panel.Children.Add(new Label { Content = level.name, BorderBrush = Brushes.Transparent });
                     TextBox tb = new TextBox { Text = level.height.ToString(), Width = 100, TextAlignment = TextAlignment.Right, Tag = level.index };
+                    tb.TextChanged += Tb_TextChanged;
                     panel.Children.Add(tb);
                     panel.Children.Add(new Label { Content = "m", BorderBrush = Brushes.Transparent });
                     level_input.Children.Add(panel);
@@ -59,7 +60,9 @@ namespace WPF_Learning.View
             }
         }
 
-
-
+        private void Tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            vm.Levels[(int)(sender as TextBox).Tag].height = Convert.ToDouble((sender as TextBox).Text);
+        }
     }
 }
