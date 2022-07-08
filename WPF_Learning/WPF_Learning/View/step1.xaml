@@ -19,7 +19,7 @@
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
             <TextBlock FontSize="30px"><Run Text="樓層"/></TextBlock>
             <hc:CheckComboBox Width="600" ShowClearButton="True" ShowSelectAllButton="True" Style="{StaticResource CheckComboBoxExtend}"
-                              ItemsSource="{Binding Levels}"/>
+                              ItemsSource="{Binding Levels}" SelectionChanged="CheckComboBox_SelectionChanged"/>
         </StackPanel>
         <StackPanel x:Name="level_input" Orientation="Vertical" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top">
             

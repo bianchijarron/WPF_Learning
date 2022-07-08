@@ -37,7 +37,13 @@ namespace WPF_Learning.ViewModel
             set => SetProperty(_level.index, value, _level, (u, n) => u.index = n);
         }
 
-        public override string ToString()
+        public bool selected
+        {
+            get => _level.selected;
+            set => SetProperty(_level.selected, value, _level, (u, n) => u.selected = n);
+        }
+
+        public override string ToString()//把原本沒有正確顯示名稱的資料用 name顯示
         {
             return _level.name;
         }

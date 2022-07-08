@@ -19,11 +19,47 @@ namespace WPF_Learning.View
     /// </summary>
     public partial class step1 : Window
     {
-        ViewModel.MRTStationVM vm = new ViewModel.MRTStationVM();
+        ViewModel.MRTStationVM vm = new ViewModel.MRTStationVM();//新建一個 MRTStationVM()，讓他執行 MRTStationVM()底下程式把樓層資訊抓近來
         public step1()
         {
             InitializeComponent();
-            this.DataContext = vm;
+            this.DataContext = vm;//把東西塞到畫面上
         }
+
+        private void CheckComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (ViewModel.MRTLevelVM item in (sender as HandyControl.Controls.CheckComboBox).Items)
+            {
+                item.selected = false;
+            }
+
+            foreach (ViewModel.MRTLevelVM item in (sender as HandyControl.Controls.CheckComboBox).SelectedItems)
+            {
+                item.selected = true;
+            }
+
+            input_refresh();
+        }
+
+        void input_refresh()
+        {
+            level_input.Children.Clear();
+            foreach (var level in vm.Levels)
+            {
+                if (level.selected)
+                {
+                    StackPanel panel = new StackPanel();
+                    panel.Orientation = Orientation.Horizontal;
+                    panel.Children.Add(new Label { Content = level.name, BorderBrush = Brushes.Transparent });
+                    TextBox tb = new TextBox { Text = level.height.ToString(), Width = 100, TextAlignment = TextAlignment.Right, Tag = level.index };
+                    panel.Children.Add(tb);
+                    panel.Children.Add(new Label { Content = "m", BorderBrush = Brushes.Transparent });
+                    level_input.Children.Add(panel);
+                }
+            }
+        }
+
+
+
     }
 }

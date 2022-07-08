@@ -11,19 +11,19 @@ namespace WPF_Learning.ViewModel
     public class MRTStationVM: ObservableObject
     {
         Model.MRTStation _station;
-        ObservableCollection<MRTLevelVM> _levels;
+        ObservableCollection<MRTLevelVM> _levels;//不直接用Model.MRTLevel _level = 來宣告 會寫死，而且也不用 MRTLevel 要用 MRTLevelVM
         public MRTStationVM()
         {
             _station = new Model.MRTStation();
             _levels = new ObservableCollection<MRTLevelVM>();
 
-            for (int i = 0; i < Model.BasicStationInfo.level_names.Length; i++)
+            for (int i = 0; i < Model.BasicStationInfo.level_names.Length; i++)//把 BasicStationInfo裡的樓層資料抓過來
             {
                 _levels.Add(new MRTLevelVM(Model.BasicStationInfo.level_names[i], i));
             }
         }
 
-        public ObservableCollection<MRTLevelVM> Levels//跟step1的Levels綁在一起
+        public ObservableCollection<MRTLevelVM> Levels//跟step1的Levels綁在一起，用 ObservableCollection因為要跟 _levels的 type一樣
         {
             get => _levels;
         }

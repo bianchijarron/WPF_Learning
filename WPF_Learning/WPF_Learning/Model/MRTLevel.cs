@@ -17,5 +17,7 @@ namespace WPF_Learning.Model
         public string name { get; set; }
         public double height { get; set; }
         public int index { get; set; }
+        public bool selected { get; set; }
+
     }
 }
