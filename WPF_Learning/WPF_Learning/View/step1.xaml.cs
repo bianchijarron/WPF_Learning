@@ -39,9 +39,10 @@ namespace WPF_Learning.View
             }
 
             input_refresh();
+            DrawLevels();
         }
 
-        void input_refresh()
+        void input_refresh()//負責把選到的樓層做出左下的輸入格
         {
             level_input.Children.Clear();
             foreach (var level in vm.Levels)
@@ -62,7 +63,60 @@ namespace WPF_Learning.View
 
         private void Tb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            vm.Levels[(int)(sender as TextBox).Tag].height = Convert.ToDouble((sender as TextBox).Text);
+            vm.Levels[(int)(sender as TextBox).Tag].height = Model.BasicStationInfo.ToDouble((sender as TextBox).Text);
+
+            DrawLevels();
         }
+
+        public void DrawLevels()
+        {
+            canvas.Children.Clear();
+
+            List<double> heights = new List<double>();
+            foreach(var floor in vm.Levels)
+            {
+                if (floor.selected)
+                    heights.Add(floor.height);
+            }
+           
+
+            foreach (var floor in vm.Levels)
+            {
+                if (floor.selected)
+                {
+                    double c_height = change_coordinate(floor.height, heights.Max(), heights.Min(), canvas.ActualHeight);
+                    Line newLine = new Line
+                    {
+                        X1 = 50,
+                        Y1 = c_height,
+                        X2 = canvas.ActualWidth - 50,
+                        Y2 = c_height,
+                        Stroke = Brushes.Blue,
+                        StrokeThickness = 1
+                    };
+                    canvas.Children.Add(newLine);
+
+                    TextBlock textBlock = new TextBlock();
+                    textBlock.Text = floor.name.ToString();
+                    textBlock.Foreground = new SolidColorBrush(Colors.Blue);
+                    Canvas.SetLeft(textBlock, 10);
+                    Canvas.SetTop(textBlock, c_height - 10);
+                    canvas.Children.Add(textBlock);
+
+                    TextBlock textBlock1 = new TextBlock();
+                    textBlock1.Text = floor.height.ToString() + " m";
+                    textBlock1.Foreground = new SolidColorBrush(Colors.Blue);
+                    Canvas.SetLeft(textBlock1, canvas.ActualWidth - 40);
+                    Canvas.SetTop(textBlock1, c_height - 10);
+                    canvas.Children.Add(textBlock1);
+                }
+            }
+        }
+
+        double change_coordinate(double height, double max, double min, double canvas_height)
+        {
+            return canvas_height - (canvas_height / (max - min + 2) * (height - min)) - 20;
+        }
+
     }
 }
